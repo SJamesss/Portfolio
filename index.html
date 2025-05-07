@@ -19,13 +19,14 @@
             color: #000;
             line-height: 1.4;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 0 32px;
+            padding: 32px 16px;
             position: relative;
         }
 
@@ -35,6 +36,7 @@
             align-items: center;
             gap: 64px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .profile-circle {
@@ -46,6 +48,7 @@
             overflow: hidden;
             flex-shrink: 0;
             border: 4px solid var(--primary-color);
+            margin: 0 auto;
         }
 
         .profile-image {
@@ -60,7 +63,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(48px, 7vw, 84px);
+            font-size: clamp(36px, 5vw, 84px);
             font-weight: 500;
             line-height: 1.1;
             letter-spacing: -0.03em;
@@ -69,7 +72,7 @@
         }
 
         .hero p {
-            font-size: 20px;
+            font-size: clamp(16px, 2.5vw, 20px);
             color: #333;
             max-width: 600px;
             margin-bottom: 32px;
@@ -78,14 +81,15 @@
 
         .contact-links {
             display: flex;
-            gap: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
             margin-top: 32px;
         }
 
         .contact-link {
             color: #000;
             text-decoration: none;
-            font-size: 24px;
+            font-size: clamp(16px, 2.5vw, 24px);
             font-weight: 500;
             border-bottom: 1px solid transparent;
             transition: all 0.3s ease;
@@ -103,22 +107,23 @@
         }
 
         .contact-link i {
-            font-size: 28px;
+            font-size: clamp(20px, 2.5vw, 28px);
         }
 
         /* Section styling */
         .section {
-            padding: 60px 32px;
+            padding: 60px 16px;
             border-top: 1px solid #e0e0e0;
         }
 
         .section > * {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
         .section-title {
-            font-size: clamp(32px, 5vw, 64px);
+            font-size: clamp(28px, 5vw, 64px);
             font-weight: 500;
             margin-bottom: 32px;
             letter-spacing: -0.02em;
@@ -162,7 +167,7 @@
         }
 
         .tableau-title {
-            font-size: 36px;
+            font-size: clamp(24px, 4vw, 36px);
             font-weight: 600;
             margin-bottom: 12px;
             color: var(--primary-color);
@@ -170,7 +175,7 @@
         }
 
         .tableau-subtitle {
-            font-size: 18px;
+            font-size: clamp(14px, 2vw, 18px);
             color: #666;
             margin-bottom: 16px;
         }
@@ -185,7 +190,7 @@
 
         .action-button {
             display: inline-block;
-            padding: 14px 32px;
+            padding: 12px 24px;
             background: var(--primary-color);
             color: #fff;
             text-decoration: none;
@@ -193,6 +198,8 @@
             font-weight: 500;
             transition: transform 0.2s ease;
             text-align: center;
+            font-size: clamp(14px, 2vw, 16px);
+            width: 100%;
         }
 
         .action-button:hover {
@@ -201,6 +208,15 @@
 
         .tableau-preview {
             margin-bottom: 16px;
+            width: 100%;
+        }
+
+        .tableau-preview img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
         }
 
         /* Coding Section */
@@ -216,12 +232,13 @@
         .code-card {
             background: #f5f5f5;
             border-radius: 24px;
-            padding: 48px;
+            padding: clamp(24px, 4vw, 48px);
         }
 
         .app-preview {
             width: 100%;
-            height: 600px;
+            height: auto;
+            max-height: 600px;
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid #e0e0e0;
@@ -247,7 +264,8 @@
         .image-slider {
             position: relative;
             width: 100%;
-            height: 600px;
+            height: 0;
+            padding-bottom: 75%; /* Aspect ratio 4:3 */
             border-radius: 24px;
             overflow: hidden;
         }
@@ -259,6 +277,8 @@
             object-fit: cover;
             opacity: 0;
             transition: opacity 0.5s ease;
+            top: 0;
+            left: 0;
         }
 
         .slider-image.active {
@@ -272,6 +292,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 12px;
+            z-index: 2;
         }
 
         .slider-dot {
@@ -288,13 +309,13 @@
         }
 
         .metrics-card {
-            padding: 48px;
+            padding: clamp(24px, 4vw, 48px);
         }
 
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 24px;
+            gap: clamp(12px, 2vw, 24px);
             margin: 24px 0;
         }
 
@@ -307,14 +328,14 @@
         }
 
         .metric-value {
-            font-size: 28px;
+            font-size: clamp(20px, 3vw, 28px);
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 8px;
         }
 
         .metric-label {
-            font-size: 16px;
+            font-size: clamp(12px, 2vw, 16px);
             color: #666;
         }
 
@@ -333,7 +354,7 @@
             border-radius: 16px;
             margin-right: 8px;
             margin-bottom: 8px;
-            font-size: 14px;
+            font-size: clamp(12px, 1.5vw, 14px);
             font-weight: 500;
         }
 
@@ -349,26 +370,26 @@
         .automation-card {
             background: #f5f5f5;
             border-radius: 24px;
-            padding: 32px;
+            padding: clamp(20px, 3vw, 32px);
         }
 
         .workflow-image {
             width: 100%;
-            height: 300px;
+            height: auto;
             object-fit: cover;
             border-radius: 16px;
             margin: 24px 0;
         }
 
         .footer {
-            padding: 32px;
+            padding: 32px 16px;
             text-align: center;
             border-top: 1px solid #e0e0e0;
             margin-top: 0;
         }
 
         .footer p {
-            font-size: 16px;
+            font-size: clamp(14px, 2vw, 16px);
             color: #666;
         }
 
@@ -380,11 +401,11 @@
         .project-details p {
             margin-bottom: 16px;
             line-height: 1.6;
-            font-size: 16px;
+            font-size: clamp(14px, 2vw, 16px);
         }
 
         .project-details h4 {
-            font-size: 20px;
+            font-size: clamp(16px, 2.5vw, 20px);
             font-weight: 600;
             margin-bottom: 12px;
             color: var(--primary-color);
@@ -400,7 +421,7 @@
             margin-bottom: 8px;
             padding-left: 24px;
             position: relative;
-            font-size: 16px;
+            font-size: clamp(14px, 2vw, 16px);
             color: #333;
         }
 
@@ -413,14 +434,14 @@
 
         .key-features, .key-metrics, .eco-metrics {
             background: #f0f0f0;
-            padding: 20px;
+            padding: clamp(16px, 2.5vw, 20px);
             border-radius: 8px;
             margin-top: 16px;
             border-left: 4px solid var(--primary-color);
         }
 
         .key-features h4, .key-metrics h4, .eco-metrics h4 {
-            font-size: 20px;
+            font-size: clamp(16px, 2.5vw, 20px);
             font-weight: 600;
             margin-bottom: 12px;
             color: var(--primary-color);
@@ -458,19 +479,69 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            .section {
+                padding: 60px 16px;
             }
             
-            .section {
-                padding: 80px 16px;
+            .hero {
+                padding-top: 48px;
+                padding-bottom: 48px;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .app-preview {
+                max-height: 450px;
             }
         }
 
         @media (max-width: 480px) {
             .profile-circle {
-                width: 250px;
-                height: 250px;
+                width: 220px;
+                height: 220px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section {
+                padding: 40px 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 24px;
+            }
+            
+            .tableau-title {
+                font-size: 24px;
+            }
+            
+            .tableau-subtitle {
+                font-size: 14px;
+            }
+            
+            .action-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .app-preview {
+                max-height: 350px;
             }
         }
     </style>
