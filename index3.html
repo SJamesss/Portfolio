@@ -213,7 +213,7 @@
 
         .tableau-preview img {
             width: 100%;
-            height: 100%;
+            height: auto;
             max-height: 300px;
             object-fit: cover;
             border-radius: 8px;
@@ -567,31 +567,30 @@
     <!-- Data Visualization Section -->
     <section class="section">
         <h2 class="section-title">Data Visualization</h2>
-        <div class="dataviz-grid" style="grid-template-columns: 1fr;">
-            <div class="tableau-card" style="padding: 24px;">
+        <div class="dataviz-grid">
+            <div class="tableau-card">
                 <h3 class="tableau-title">Bank Customer Attrition</h3>
-                <p class="tableau-subtitle" style="font-size: 18px; margin-bottom: 20px;">Predicting customer churn through advanced data visualization</p>
-                <div style="margin-bottom: 24px; overflow: visible;">
-                    <img src="images/Image Tableau.png" alt="Bank Customer Attrition Dashboard Preview" style="width: 100%; display: block;">
-                </div>
-                <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">This interactive dashboard transforms complex banking data into actionable insights, identifying key risk factors driving customer attrition. By analyzing demographic profiles, account behaviors, and engagement metrics, the dashboard enables precise customer segmentation and provides early warning indicators for at-risk accounts.</p>
-                    <div class="key-features" style="margin-top: 24px;">
-                        <h4>Key Insights:</h4>
-                        <ul>
-                            <li>Predictive analysis of customer attrition patterns</li>
-                            <li>Demographic and behavioral risk factor identification</li>
-                            <li>Interactive segmentation by customer value and risk level</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tech-tags" style="margin: 24px 0;">
-                    <span class="tech-tag">Tableau</span>
-                    <span class="tech-tag">Data Analysis</span>
-                    <span class="tech-tag">Predictive Modeling</span>
-                    <span class="tech-tag">Customer Insights</span>
+                <p class="tableau-subtitle">Interactive dashboard analyzing customer churn patterns and risk factors</p>
+                <div class="tableau-preview">
+                    <img src="https://public.tableau.com/static/images/Ba/BankCustomerAttrition_17381608611290/BankCustomerAttrition/1.png" alt="Bank Customer Attrition Dashboard Preview" style="width: 100%; border-radius: 8px; margin-bottom: 16px;">
                 </div>
                 <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala/viz/BankCustomerAttrition_17381608611290/BankCustomerAttrition" class="action-button" target="_blank">Explore Dashboard →</a>
+            </div>
+            <div class="tableau-card">
+                <h3 class="tableau-title">Superstore Analytics</h3>
+                <p class="tableau-subtitle">Business intelligence dashboard for retail performance metrics</p>
+                <div class="tableau-preview">
+                    <img src="https://public.tableau.com/static/images/Su/SuperstoreDashboard_17203874151950/Overview/1.png" alt="Superstore Analytics Dashboard Preview" style="width: 100%; border-radius: 8px; margin-bottom: 16px;">
+                </div>
+                <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala/viz/SuperstoreDashboard_17203874151950/Overview" class="action-button" target="_blank">View Analytics →</a>
+            </div>
+            <div class="tableau-card">
+                <h3 class="tableau-title">Sales Dashboard</h3>
+                <p class="tableau-subtitle">E-commerce sales performance and insights tracker</p>
+                <div class="tableau-preview">
+                    <img src="https://public.tableau.com/static/images/Sa/SalesDashboard_17378240121890/SalesDashboard/1.png" alt="Sales Dashboard Preview" style="width: 100%; border-radius: 8px; margin-bottom: 16px;">
+                </div>
+                <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala/viz/SalesDashboard_17378240121890/SalesDashboard" class="action-button" target="_blank">View Sales →</a>
             </div>
         </div>
     </section>
@@ -600,9 +599,39 @@
     <section class="section coding-section">
         <h2 class="section-title">Coding</h2>
         
-        <!-- Binko -->
+        <!-- Part 1: FinanceGPT -->
+        <div class="coding-grid" style="margin-bottom: 48px;">
+            <div>
+                <h3 class="tableau-title">FinanceGPT</h3>
+                <p class="tableau-subtitle">AI-powered banking assistant for financial analysis</p>
+                <div class="project-details">
+                    <p>An <span class="highlight">AI-powered web application</span> that analyzes bank statements and provides personalized financial insights. Using <span class="highlight">OCR</span> for data extraction and <span class="highlight">Claude AI</span> for analysis, it offers automated transaction analysis, fraud detection, and personalized financial advice.</p>
+                    <div class="key-features">
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>PDF to text conversion via OCR</li>
+                            <li>Automated transaction analysis</li>
+                            <li>Suspicious activity detection</li>
+                            <li>Interactive chat interface</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Streamlit</span>
+                    <span class="tech-tag">Claude AI</span>
+                    <span class="tech-tag">OCR</span>
+                </div>
+                <a href="https://financegpt.streamlit.app/" class="action-button" target="_blank" style="margin-top: 32px;">Launch App →</a>
+            </div>
+            <div class="app-preview">
+                <img src="images/FinanceGPT.png" alt="FinanceGPT App Preview" style="width: 100%; height: 100%; object-fit: contain; padding: 16px; border-radius: 16px; border: 1px solid #e0e0e0;">
+            </div>
+        </div>
+
+        <!-- Part 2: Binko -->
         <div class="coding-grid">
-            <div class="image-slider" style="height: auto; padding-bottom: 75%;">
+            <div class="image-slider">
                 <img src="images/Binko_Project 1.jpg" alt="Binko Beta" class="slider-image active">
                 <img src="images/Binko_Project 2.jpg" alt="Binko Final" class="slider-image">
                 <div class="slider-controls">
@@ -612,37 +641,25 @@
             </div>
             <div class="metrics-card">
                 <h3 class="tableau-title">Binko</h3>
-                <p class="tableau-subtitle" style="font-size: 18px; margin-bottom: 24px;">AI-powered waste detection through image generation</p>
+                <p class="tableau-subtitle">AI-powered image generation system</p>
                 <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">Binko is a company that automates waste detection and identification. This image generation project enables Binko's AI model to train on diverse waste examples, significantly improving its ability to accurately detect and classify different types of waste materials.</p>
-                    
-                    <p style="font-size: 17px; line-height: 1.7; margin-top: 16px;">The custom-built pipeline integrates <span class="highlight">Make</span> for seamless request handling, <span class="highlight">GPT-4o Mini</span> for intelligent prompt engineering, and <span class="highlight">Stable Diffusion 3.5</span> on Lightning AI for high-quality image generation—all orchestrated through Python automation.</p>
+                    <p>Large-scale automation of <span class="highlight">product image generation</span> to optimize marketing visual content production. The system integrates <span class="highlight">Make.com</span> for request handling, <span class="highlight">GPT-4 Mini</span> for prompt optimization, and <span class="highlight">Stable Diffusion 3.5</span> on Lightning AI.</p>
                 </div>
-                <div class="metrics-grid" style="margin: 24px 0;">
+                <div class="metrics-grid">
                     <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">93%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Cost Reduction</div>
+                        <div class="metric-value">93%</div>
+                        <div class="metric-label">Cost Reduction</div>
                     </div>
                     <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">180</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Images/hour</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">8.5/10</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Realism Score</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">$0.00075</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Cost per Image</div>
+                        <div class="metric-value">180</div>
+                        <div class="metric-label">Images/hour</div>
                     </div>
                 </div>
                 <div class="tech-tags">
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">Lightning AI</span>
                     <span class="tech-tag">Stable Diffusion</span>
-                    <span class="tech-tag">Make</span>
-                    <span class="tech-tag">GPT-4o Mini</span>
-                    <span class="tech-tag">Claude AI</span>
+                    <span class="tech-tag">Make.com</span>
                 </div>
             </div>
         </div>
@@ -651,54 +668,49 @@
     <!-- AI Automation Section -->
     <section class="section">
         <h2 class="section-title">AI Automation</h2>
-        <div class="automation-grid" style="grid-template-columns: 1fr;">
+        <div class="automation-grid">
             <div class="automation-card">
-                <div style="display: flex; align-items: center; margin-bottom: 24px;">
-                    <img src="images/Malt Make Mistral Logo.png" alt="MALT MAKE MISTRAL Logo" style="height: 80px; margin-right: 24px; border-radius: 8px;">
-                    <div>
-                        <h3 class="tableau-title" style="margin-bottom: 8px;">MALT MAKE MISTRAL</h3>
-                        <p class="tableau-subtitle" style="font-size: 18px; margin: 0;">Intelligent B2B prospecting through AI automation</p>
-                    </div>
-                </div>
-                
+                <h3 class="tableau-title">MALT MAKE MISTRAL</h3>
+                <p class="tableau-subtitle">B2B prospection automation with AI scoring</p>
                 <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">As the Technical Lead for this project, I developed an innovative system that revolutionizes B2B prospecting for the MALT platform by applying advanced AI techniques to identify, score, and engage high-potential leads. Under my direction, the project introduced a sophisticated multi-channel outreach strategy powered by intelligent algorithms that transformed their acquisition workflow.</p>
-                    
-                    <p style="font-size: 17px; line-height: 1.7; margin-top: 16px;">My technical architecture leverages <span class="highlight">Mistral AI</span> for precise prospect analysis, implements <span class="highlight">AI-driven segmentation</span> for personalized engagement, and creates an omnichannel workflow with real-time performance monitoring through Slack integration—delivering measurable improvements to lead generation and conversion rates.</p>
-                    
-                    <div class="key-metrics" style="margin-top: 24px;">
-                        <h4>Key Performance Highlights:</h4>
+                    <p><span class="highlight">B2B prospecting automation</span> for the MALT platform, optimizing freelancer and business client acquisition. Features automated prospect scoring, <span class="highlight">AI-based segmentation</span>, and omnichannel workflow with real-time Slack monitoring.</p>
+                    <div class="key-metrics">
+                        <h4>Performance:</h4>
                         <ul>
-                            <li>Industry-leading 80% WhatsApp open rate (vs 60% for email)</li>
-                            <li>Real-time LinkedIn profile analysis for accurate targeting</li>
-                            <li>AI-powered intelligent follow-up system with personalized messaging</li>
-                            <li>Omnichannel engagement across messaging, email and social platforms</li>
+                            <li>80% WhatsApp open rate</li>
+                            <li>Real-time LinkedIn analysis</li>
+                            <li>Intelligent follow-up system</li>
                         </ul>
                     </div>
                 </div>
-                
-                <img src="images/Make Workflow.png" alt="MALT Workflow" class="workflow-image" style="max-height: none; margin: 30px 0;">
-                
-                <div class="metrics-grid" style="margin-top: 24px;">
+                <img src="images/Make Workflow.png" alt="MALT Workflow" class="workflow-image">
+                <div class="metrics-grid">
                     <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">80%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">WhatsApp Open Rate</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">+40%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Lead Conversion</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">100%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Automation</div>
+                        <div class="metric-value">80%</div>
+                        <div class="metric-label">Engagement Rate</div>
                     </div>
                 </div>
-                
-                <div class="tech-tags" style="margin-top: 24px;">
-                    <span class="tech-tag">Make</span>
-                    <span class="tech-tag">Mistral AI</span>
-                    <span class="tech-tag">OpenRouter</span>
-                    <span class="tech-tag">Perplexity</span>
+            </div>
+            <div class="automation-card">
+                <h3 class="tableau-title">Go Fusion</h3>
+                <p class="tableau-subtitle">SEO automation platform for eco-responsible content</p>
+                <div class="project-details">
+                    <p><span class="highlight">SEO optimization</span> for an eco-responsible platform rewarding environmental and societal actions. Implements automated content strategy using <span class="highlight">Claude AI</span> and <span class="highlight">DataforSEO</span>, with a focus on minimizing environmental impact.</p>
+                    <div class="eco-metrics">
+                        <h4>Environmental Impact:</h4>
+                        <ul>
+                            <li>4.32g CO2 per blog post</li>
+                            <li>0.14L water usage per blog</li>
+                            <li>Optimized mobile performance</li>
+                        </ul>
+                    </div>
+                </div>
+                <img src="images/GO FUSION Make Workflow.png" alt="Go Fusion Workflow" class="workflow-image">
+                <div class="metrics-grid">
+                    <div class="metric-item">
+                        <div class="metric-value">4.32g</div>
+                        <div class="metric-label">CO2/blog post</div>
+                    </div>
                 </div>
             </div>
         </div>
