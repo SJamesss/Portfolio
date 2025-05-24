@@ -3,754 +3,1115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sackdiphat SOUNTHALA</title>
+    <title>Sackdiphat SOUNTHALA | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --bg-color: #f6f6f6;
+            --card-color: #ffffff;
+            --card-border: #e0e0e0;
+            --text-color: #333333;
+            --text-light: #666666;
+            --accent-color: #0066FF;
+            --radius: 16px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --transition: all 0.3s ease;
+        }
+
         body {
-            font-family: 'NType82';
-            background: #ffffff;
-            color: #000;
-            line-height: 1.4;
-            overflow-x: hidden;
-            width: 100%;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+            padding: 15px;
         }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 32px 16px;
-            position: relative;
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        .hero-content {
-            max-width: 1200px;
-            display: flex;
-            align-items: center;
-            gap: 64px;
+        /* Main container - Perfect rectangular grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            max-width: 1400px;
             margin: 0 auto;
-            width: 100%;
         }
 
-        .profile-circle {
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            background: #f5f5f5;
-            position: relative;
+        /* Card base styles */
+        .card {
+            background: var(--card-color);
+            border-radius: var(--radius);
             overflow: hidden;
-            flex-shrink: 0;
-            border: 4px solid var(--primary-color);
-            margin: 0 auto;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        /* Black background cards */
+        .projects-card, .contact-card, .coding-card {
+            background: #000;
+            color: #fff;
+        }
+        
+        /* Adjust text color for dark background cards */
+        .projects-card .card-title,
+        .contact-card .card-title,
+        .coding-card .card-title {
+            color: #fff;
         }
 
+        /* Grid positioning - Structured for perfect rectangle */
+        .profile-card {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+        }
+
+        .about-card {
+            grid-column: 1 / 2;
+            grid-row: 3 / 5;
+            background-image: url('images/AboutMe Background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dataviz-card {
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+        }
+
+        .coding-card {
+            grid-column: 2 / 4;
+            grid-row: 3 / 5;
+        }
+
+        .projects-card {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        .ai-tools-card {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+
+        .data-tools-card {
+            grid-column: 4 / 5;
+            grid-row: 3 / 4;
+        }
+
+        .contact-card {
+            grid-column: 4 / 5;
+            grid-row: 4 / 5;
+        }
+
+        .automation-card {
+            grid-column: 1 / 5;
+            grid-row: 5 / 7;
+        }
+
+        /* Card content */
+        .card-content {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Adjust card content for dataviz and coding cards */
+        .dataviz-card .card-content,
+        .coding-card .card-content {
+            padding: 15px; /* Reduced padding */
+        }
+        
+        .dataviz-card .card-title,
+        .coding-card .card-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .dataviz-card .metrics,
+        .coding-card .metrics {
+            margin: 10px 0;
+            gap: 8px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        /* Profile styles */
         .profile-image {
+            width: 100%;
+            height: 280px; /* Increased height to fill more space */
+            object-fit: contain; /* Changed to contain to show full head */
+            padding: 10px; /* Add some padding */
+            background: #fff; /* White background for the image */
+        }
+
+        .profile-name {
+            font-size: 2rem; /* Larger font size */
+            font-weight: 700;
+            margin: 20px 0 8px; /* More spacing */
+        }
+
+        .profile-title {
+            font-size: 1.2rem; /* Larger font size */
+            color: var(--text-light);
+            margin-bottom: 15px; /* More spacing */
+        }
+
+        .profile-text {
+            font-size: 1.1rem; /* Larger font size */
+            line-height: 1.6;
+            margin-bottom: 15px;
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+            padding: 15px;
+            border-radius: 10px;
+            color: white; /* White text for better readability on dark background */
+        }
+
+        /* Project image styles - Full frame coverage */
+        .image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Adjust image height for specific cards */
+        .dataviz-card .image-container,
+        .coding-card .image-container {
+            height: 350px; /* Makes the image take up more vertical space (2/3) */
+        }
+
+        .project-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            cursor: pointer; /* Indicate it's clickable */
+            transition: transform 0.3s ease;
         }
 
-        .hero-text {
-            flex: 1;
-            min-width: 0;
+        .image-container:hover .project-image {
+            transform: scale(1.05);
         }
 
-        .hero h1 {
-            font-size: clamp(36px, 5vw, 84px);
-            font-weight: 500;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-            color: var(--primary-color);
+        /* Full screen image modal */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero p {
-            font-size: clamp(16px, 2.5vw, 20px);
-            color: #333;
-            max-width: 600px;
-            margin-bottom: 32px;
-            line-height: 1.6;
+        .fullscreen-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
         }
 
-        .contact-links {
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Project metrics - Outside description */
+        .metrics {
             display: flex;
             flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 32px;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .metric {
+            background: var(--bg-color);
+            padding: 8px 12px;
+            border-radius: 10px;
+            text-align: center;
+            flex: 1;
+            min-width: 70px;
+        }
+
+        .metric-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+        
+        /* Metrics styling for dark cards */
+        .coding-card .metric {
+            background: #333;
+        }
+        
+        .coding-card .metric-value {
+            color: #fff;
+        }
+        
+        .coding-card .metric-label {
+            color: #ddd;
+        }
+
+        /* Project tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: var(--bg-color);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            color: var(--text-light);
+        }
+
+        /* Tool grid - Larger logos */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tool-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-item:hover .tool-logo {
+            transform: scale(1.2);
+        }
+
+        .tool-name {
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        /* White text for tool names in dark cards */
+        .coding-card .tag {
+            background: #333;
+            color: white;
+        }
+
+        /* Contact links */
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
         }
 
         .contact-link {
-            color: #000;
-            text-decoration: none;
-            font-size: clamp(16px, 2.5vw, 24px);
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 8px 16px;
-            border-radius: 8px;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--bg-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: transform 0.3s ease;
         }
 
         .contact-link:hover {
-            background: #f5f5f5;
-            border-bottom: 1px solid #000;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
-        .contact-link i {
-            font-size: clamp(20px, 2.5vw, 28px);
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+        
+        /* Styling for contact links on dark backgrounds */
+        .projects-card .contact-link, 
+        .contact-card .contact-link {
+            background: #333;
+            color: white;
+        }
+        
+        .projects-card .contact-icon,
+        .contact-card .contact-icon {
+            color: white;
         }
 
-        /* Section styling */
-        .section {
-            padding: 60px 16px;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .section > * {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .section-title {
-            font-size: clamp(28px, 5vw, 64px);
-            font-weight: 500;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-            text-align: center;
-            color: var(--primary-color);
-        }
-
-        /* Section specific backgrounds */
-        .section.coding-section {
-            background-color: #f9f9f9;
-        }
-
-        /* Data Viz Section */
-        .dataviz-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 1024px) {
-            .dataviz-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .dataviz-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .tableau-card {
-            background: #f5f5f5;
-            border-radius: 24px;
-            padding: 24px;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .tableau-title {
-            font-size: clamp(24px, 4vw, 36px);
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--primary-color);
-            letter-spacing: -0.02em;
-        }
-
-        .tableau-subtitle {
-            font-size: clamp(14px, 2vw, 18px);
-            color: #666;
-            margin-bottom: 16px;
-        }
-
-        .tableau-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .tableau-card .action-button {
-            margin-top: auto;
-        }
-
-        .action-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            transition: transform 0.2s ease;
-            text-align: center;
-            font-size: clamp(14px, 2vw, 16px);
-            width: 100%;
-        }
-
-        .action-button:hover {
-            transform: scale(1.02);
-        }
-
-        .tableau-preview {
-            margin-bottom: 16px;
-            width: 100%;
-        }
-
-        .tableau-preview img {
-            width: 100%;
-            height: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-
-        /* Coding Section */
-        .coding-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .code-card {
-            background: #f5f5f5;
-            border-radius: 24px;
-            padding: clamp(24px, 4vw, 48px);
-        }
-
-        .app-preview {
-            width: 100%;
-            height: auto;
-            max-height: 600px;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #e0e0e0;
-        }
-
-        .app-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 16px;
-        }
-
-        /* Image Generation Section */
-        .img-gen-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: center;
-        }
-
-        .image-slider {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 75%; /* Aspect ratio 4:3 */
-            border-radius: 24px;
-            overflow: hidden;
-        }
-
-        .slider-image {
+        /* Overlay styles - Improved visibility on hover with scrolling */
+        .overlay {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            overflow-y: auto; /* Allow scrolling */
+            display: block; /* Changed from flex to allow scrolling */
+            max-height: 100%;
         }
 
-        .slider-image.active {
+        .image-container:hover .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .overlay-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        /* Scrollbar styling for overlay */
+        .overlay::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .overlay::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+        
+        .overlay::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.6);
+            border-radius: 3px;
+        }
+        
+        .overlay::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.8);
+        }
+        
+        /* Key features section for overlays */
+        .overlay-key-features {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0 15px;
+        }
+        
+        .overlay-key-features h4 {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .overlay-key-features ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .overlay-key-features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .overlay-key-features li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: white;
+        }
+
+        /* Slider styles - Full view on hover */
+        .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide.active {
             opacity: 1;
         }
 
-        .slider-controls {
+        .slider-dots {
             position: absolute;
-            bottom: 24px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 12px;
+            gap: 8px;
             z-index: 2;
         }
 
         .slider-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: rgba(255,255,255,0.5);
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid white;
         }
 
         .slider-dot.active {
-            background: #fff;
+            background: white;
+            transform: scale(1.2);
         }
 
-        .metrics-card {
-            padding: clamp(24px, 4vw, 48px);
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: clamp(12px, 2vw, 24px);
-            margin: 24px 0;
-        }
-
-        .metric-item {
-            text-align: center;
-            background: #f8f8f8;
-            padding: 16px;
-            border-radius: 8px;
-            border: 1px solid #e0e0e0;
-        }
-
-        .metric-value {
-            font-size: clamp(20px, 3vw, 28px);
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        .metric-label {
-            font-size: clamp(12px, 2vw, 16px);
-            color: #666;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 24px;
-        }
-
-        .tech-tag {
-            display: inline-block;
-            padding: 6px 12px;
-            background: #f0f4f8;
-            color: var(--primary-color);
-            border-radius: 16px;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            font-size: clamp(12px, 1.5vw, 14px);
-            font-weight: 500;
-        }
-
-        /* AI Automation Section */
-        .automation-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .automation-card {
-            background: #f5f5f5;
-            border-radius: 24px;
-            padding: clamp(20px, 3vw, 32px);
-        }
-
-        .workflow-image {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            margin: 24px 0;
-        }
-
-        .footer {
-            padding: 32px 16px;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 0;
-        }
-
-        .footer p {
-            font-size: clamp(14px, 2vw, 16px);
-            color: #666;
-        }
-
-        .project-details {
-            margin: 24px 0;
-            color: #333;
-        }
-
-        .project-details p {
-            margin-bottom: 16px;
-            line-height: 1.6;
-            font-size: clamp(14px, 2vw, 16px);
-        }
-
-        .project-details h4 {
-            font-size: clamp(16px, 2.5vw, 20px);
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--primary-color);
-        }
-
-        .project-details ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .project-details li {
-            margin-bottom: 8px;
-            padding-left: 24px;
-            position: relative;
-            font-size: clamp(14px, 2vw, 16px);
-            color: #333;
-        }
-
-        .project-details li:before {
-            content: "•";
+        /* View fullscreen button */
+        .fullscreen-button {
             position: absolute;
-            left: 0;
-            color: var(--primary-color);
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: 2px solid white;
+            border-radius: 50%;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        .key-features, .key-metrics, .eco-metrics {
-            background: #f0f0f0;
-            padding: clamp(16px, 2.5vw, 20px);
-            border-radius: 8px;
-            margin-top: 16px;
-            border-left: 4px solid var(--primary-color);
+        .fullscreen-button:hover {
+            background: rgba(0,0,0,0.9);
+            transform: scale(1.1);
         }
 
-        .key-features h4, .key-metrics h4, .eco-metrics h4 {
-            font-size: clamp(16px, 2.5vw, 20px);
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--primary-color);
+        /* Logo container for AI Automation */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
         }
 
-        :root {
-            --primary-color: #000000;
+        .project-logo {
+            height: 50px;
+            object-fit: contain;
         }
 
-        @media (max-width: 1024px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 32px;
-            }
-
-            .profile-circle {
-                width: 300px;
-                height: 300px;
-            }
-
-            .contact-links {
-                justify-content: center;
-            }
-
-            .dataviz-grid,
-            .automation-grid {
-                grid-template-columns: 1fr;
+        /* Responsive styles */
+        @media (max-width: 1100px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
-            .coding-grid,
-            .img-gen-grid {
-                grid-template-columns: 1fr;
+            .profile-card {
+                grid-column: 1 / 2;
+                grid-row: 1 / 3;
+            }
+            
+            .about-card {
+                grid-column: 1 / 2;
+                grid-row: 3 / 5;
+            }
+            
+            .dataviz-card {
+                grid-column: 2 / 4;
+                grid-row: 1 / 3;
+            }
+            
+            .coding-card {
+                grid-column: 2 / 4;
+                grid-row: 3 / 5;
+            }
+            
+            .projects-card {
+                grid-column: 1 / 2;
+                grid-row: 5 / 6;
+            }
+            
+            .ai-tools-card {
+                grid-column: 2 / 3;
+                grid-row: 5 / 6;
+            }
+            
+            .data-tools-card {
+                grid-column: 3 / 4;
+                grid-row: 5 / 6;
+            }
+            
+            .contact-card {
+                grid-column: 1 / 4;
+                grid-row: 6 / 7;
+            }
+            
+            .automation-card {
+                grid-column: 1 / 4;
+                grid-row: 7 / 9;
             }
         }
 
         @media (max-width: 768px) {
-            .section {
-                padding: 60px 16px;
-            }
-            
-            .hero {
-                padding-top: 48px;
-                padding-bottom: 48px;
-            }
-            
-            .contact-links {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                display: flex;
                 flex-direction: column;
-                align-items: center;
             }
             
-            .contact-link {
+            /* Set specific order for mobile layout */
+            .profile-card {
+                order: 1;
+            }
+            
+            .about-card {
+                order: 2;
+            }
+            
+            .ai-tools-card {
+                order: 3;
+            }
+            
+            .data-tools-card {
+                order: 4;
+            }
+            
+            .dataviz-card {
+                order: 5;
+            }
+            
+            .coding-card {
+                order: 6;
+            }
+            
+            .automation-card {
+                order: 7;
+            }
+            
+            .projects-card {
+                order: 8;
+            }
+            
+            .contact-card {
+                order: 9;
+            }
+            
+            /* Reset grid layout properties */
+            .profile-card, .about-card, .dataviz-card, .coding-card,
+            .projects-card, .ai-tools-card, .data-tools-card,
+            .automation-card, .contact-card {
+                grid-column: 1;
+                grid-row: auto;
                 width: 100%;
-                max-width: 300px;
-                justify-content: center;
             }
             
-            .app-preview {
-                max-height: 450px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .profile-circle {
-                width: 220px;
-                height: 220px;
+            .image-container {
+                height: 200px;
             }
             
-            .hero h1 {
-                font-size: 32px;
+            /* For mobile - static overlay with toggle button */
+            .mobile-overlay-button {
+                position: absolute;
+                bottom: 15px;
+                right: 15px;
+                background: var(--accent-color);
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 8px 12px;
+                font-size: 12px;
+                z-index: 3;
+                cursor: pointer;
             }
             
-            .hero p {
-                font-size: 16px;
+            .mobile-overlay {
+                display: none;
+                background: #333;
+                color: white;
+                padding: 15px;
+                margin-top: 10px;
+                border-radius: 8px;
             }
             
-            .section {
-                padding: 40px 16px;
-            }
-            
-            .section-title {
-                font-size: 28px;
-                margin-bottom: 24px;
-            }
-            
-            .tableau-title {
-                font-size: 24px;
-            }
-            
-            .tableau-subtitle {
-                font-size: 14px;
-            }
-            
-            .action-button {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
-            .app-preview {
-                max-height: 350px;
+            .mobile-overlay.active {
+                display: block;
             }
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <div class="hero-content">
-            <div class="profile-circle">
-                <img src="images/Profile Picture.png" alt="Profile" class="profile-image">
+    <!-- Fullscreen modal for viewing images -->
+    <div class="fullscreen-modal">
+        <span class="close-modal">&times;</span>
+        <img src="" alt="Fullscreen view" class="fullscreen-image">
+    </div>
+
+    <div class="portfolio-grid">
+        <!-- Profile Card -->
+        <div class="card profile-card">
+            <img src="images/Profile Picture.png" alt="Sackdiphat SOUNTHALA" class="profile-image">
+            <div class="card-content">
+                <h1 class="profile-name">Sackdiphat SOUNTHALA</h1>
+                <p class="profile-title">Data Analyst & AI Specialist</p>
             </div>
-            <div class="hero-text">
-                <h1>Data Analyst,</h1>
-                <p>Implementing data engineering systems and ML solutions. Skilled in <b>Python</b>, <b>SQL</b>, <b>PowerBI</b> and <b>Tableau</b> with expertise in transforming complex data into actionable business insights.</p>
+        </div>
+
+        <!-- About Card -->
+        <div class="card about-card">
+            <div class="card-content">
+                <h2 class="card-title" style="color: white;">About Me</h2>
+                <p class="profile-text">Implementing data engineering systems and ML solutions. Skilled in <b>Python</b>, <b>SQL</b>, <b>PowerBI</b> and <b>Tableau</b> with expertise in transforming complex data into actionable business insights.</p>
+            </div>
+        </div>
+
+        <!-- Data Visualization Card -->
+        <div class="card dataviz-card">
+            <div class="image-container">
+                <img src="images/Image Tableau.png" alt="Bank Customer Attrition Dashboard" class="project-image">
+                <button class="fullscreen-button" title="View fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <!-- Description overlay -->
+                <div class="overlay">
+                    <h3 class="overlay-title">Bank Customer Attrition</h3>
+                    <p class="overlay-text">
+                        This interactive dashboard transforms complex <b>banking data</b> into <b>actionable insights</b>, identifying key <b>risk factors</b> driving customer attrition. By analyzing <b>demographic profiles</b>, account behaviors, and <b>engagement metrics</b>, the dashboard enables precise <b>customer segmentation</b> and provides early warning indicators for at-risk accounts.
+                    </p>
+                    <div class="overlay-key-features">
+                        <h4>Key Insights:</h4>
+                        <ul>
+                            <li><b>Predictive analysis</b> of customer attrition patterns</li>
+                            <li><b>Demographic and behavioral</b> risk factor identification</li>
+                            <li><b>Interactive segmentation</b> by customer value and risk level</li>
+                        </ul>
+                    </div>
+                    <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala/viz/BankCustomerAttrition_17381608611290/BankCustomerAttrition" style="color: white; text-decoration: underline; margin-top: 10px; display: inline-block;" target="_blank">Explore Dashboard →</a>
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Data Visualization</h2>
+                <!-- KPIs outside description -->
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Accuracy</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">+30%</div>
+                        <div class="metric-label">Retention</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Tableau</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Predictive Modeling</span>
+                    <span class="tag">Customer Insights</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Card -->
+        <div class="card projects-card">
+            <div class="card-content">
+                <h2 class="card-title">Project Links</h2>
                 <div class="contact-links">
-                    <a href="mailto:sackdiphat@gmail.com" class="contact-link"><i class="fas fa-envelope"></i>Email</a>
-                    <a href="https://www.linkedin.com/in/sackdiphat-sounthala/" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn</a>
-                    <a href="https://github.com/SJamesss" class="contact-link" target="_blank"><i class="fab fa-github"></i>GitHub</a>
+                    <a href="https://github.com/SJamesss" class="contact-link" target="_blank">
+                        <i class="fab fa-github contact-icon"></i>
+                        GitHub Projects
+                    </a>
+                    <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala" class="contact-link" target="_blank">
+                        <i class="fas fa-chart-bar contact-icon"></i>
+                        Tableau Public
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Tools Card -->
+        <div class="card ai-tools-card">
+            <div class="card-content">
+                <h2 class="card-title">AI Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <img src="logo/Claude_AI_logo.png" alt="Claude AI" class="tool-logo">
+                        <span class="tool-name">Claude AI</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="logo/Make_logo.png" alt="Make" class="tool-logo">
+                        <span class="tool-name">Make</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="logo/mcp_logo.png" alt="MCP" class="tool-logo">
+                        <span class="tool-name">MCP</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="images/N8N_logo.webp" alt="N8N" class="tool-logo">
+                        <span class="tool-name">N8N</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Tools Card -->
+        <div class="card data-tools-card">
+            <div class="card-content">
+                <h2 class="card-title">Data Tools</h2>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <img src="logo/Python-logo.webp" alt="Python" class="tool-logo">
+                        <span class="tool-name">Python</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="logo/sql-logo.jpg" alt="SQL" class="tool-logo">
+                        <span class="tool-name">SQL</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="logo/Tableau-logo.svg" alt="Tableau" class="tool-logo">
+                        <span class="tool-name">Tableau</span>
+                    </div>
+                    <div class="tool-item">
+                        <img src="logo/powerbi-logo.png" alt="Power BI" class="tool-logo">
+                        <span class="tool-name">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Card -->
+        <div class="card contact-card">
+            <div class="card-content">
+                <h2 class="card-title">Contact</h2>
+                <div class="contact-links">
+                    <a href="mailto:sackdiphat@gmail.com" class="contact-link">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        Email
+                    </a>
+                    <a href="https://www.linkedin.com/in/sackdiphat-sounthala/" class="contact-link" target="_blank">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coding Card -->
+        <div class="card coding-card">
+            <div class="image-container">
+                <div class="slider">
+                    <div class="slides">
+                        <img src="images/Binko_Project 1.jpg" alt="Binko Project 1" class="project-image slide active">
+                        <img src="images/Binko_Project 2.jpg" alt="Binko Project 2" class="project-image slide">
+                        <img src="images/Binko_Project 3.jpg" alt="Binko Project 3" class="project-image slide">
+                    </div>
+                    <div class="slider-dots">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                    </div>
+                </div>
+                <button class="fullscreen-button" title="View fullscreen">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <!-- Description overlay -->
+                <div class="overlay">
+                    <h3 class="overlay-title">Binko - AI Waste Detection</h3>
+                    <p class="overlay-text">
+                        Binko is a company that automates <b>waste detection</b> and identification. This <b>image generation project</b> enables Binko's <b>AI model</b> to train on diverse waste examples, significantly improving its ability to <b>accurately detect</b> and classify different types of waste materials.
+                    </p>
+                    <p class="overlay-text">
+                        The <b>custom-built pipeline</b> integrates <b>Make</b> for seamless request handling, <b>GPT-4o Mini</b> for <b>intelligent prompt engineering</b>, and <b>Stable Diffusion 3.5</b> on Lightning AI for <b>high-quality image generation</b>—all orchestrated through Python automation.
+                    </p>
+                </div>
+            </div>
+            <div class="card-content">
+                <h2 class="card-title">Coding</h2>
+                <!-- KPIs outside description -->
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">93%</div>
+                        <div class="metric-label">Cost Reduction</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">180</div>
+                        <div class="metric-label">Images/hour</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">8.5/10</div>
+                        <div class="metric-label">Realism</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">$0.00075</div>
+                        <div class="metric-label">Cost per Image</div>
+                    </div>
+                </div>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Stable Diffusion</span>
+                    <span class="tag">Make</span>
+                    <span class="tag">Claude AI</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Automation Card -->
+        <div class="card automation-card">
+            <div style="display: flex; flex-wrap: wrap;">
+                <!-- Left side - Workflow image -->
+                <div style="flex: 3; min-width: 300px;">
+                    <div class="image-container" style="height: 300px;">
+                        <img src="images/Make Workflow.png" alt="Make Workflow" class="project-image">
+                        <button class="fullscreen-button" title="View fullscreen">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                        <!-- Description overlay -->
+                        <div class="overlay">
+                            <h3 class="overlay-title">MALT - B2B Prospecting</h3>
+                            <p class="overlay-text">
+                                As the <b>Technical Lead</b> for this project, I developed an <b>innovative system</b> that revolutionizes <b>B2B prospecting</b> for the MALT platform by applying <b>advanced AI techniques</b> to identify, score, and engage high-potential leads. Under my direction, the project introduced a <b>sophisticated multi-channel outreach strategy</b> powered by intelligent algorithms that transformed their acquisition workflow.
+                            </p>
+                            <p class="overlay-text">
+                                My <b>technical architecture</b> leverages <b>Mistral AI</b> for <b>precise prospect analysis</b>, implements <b>AI-driven segmentation</b> for <b>personalized engagement</b>, and creates an <b>omnichannel workflow</b> with real-time performance monitoring through Slack integration—delivering measurable improvements to lead generation and conversion rates.
+                            </p>
+                            <div class="overlay-key-features">
+                                <h4>Key Performance Highlights:</h4>
+                                <ul>
+                                    <li>Industry-leading <b>80% WhatsApp open rate</b> (vs 60% for email)</li>
+                                    <li><b>Real-time LinkedIn</b> profile analysis for accurate targeting</li>
+                                    <li><b>AI-powered intelligent follow-up</b> system with personalized messaging</li>
+                                    <li><b>Omnichannel engagement</b> across messaging, email and social platforms</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right side - Content -->
+                <div class="card-content" style="flex: 2; min-width: 250px;">
+                    <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+                        <div>
+                            <div class="logo-container">
+                                <img src="images/Malt Make Mistral Logo.png" alt="Malt Make Mistral" class="project-logo" style="height: 70px; margin-right: 15px;">
+                                <h2 class="card-title">AI Automation</h2>
+                            </div>
+                            
+                            <!-- Brief description outside overlay -->
+                            <p style="margin-bottom: 20px; font-size: 0.9rem;">
+                                An innovative B2B prospecting system that leverages AI to identify, score, and engage high-potential leads through multiple channels.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <!-- KPIs outside description -->
+                            <div class="metrics">
+                                <div class="metric">
+                                    <div class="metric-value">80%</div>
+                                    <div class="metric-label">WhatsApp Open Rate</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">+40%</div>
+                                    <div class="metric-label">Lead Conversion</div>
+                                </div>
+                                <div class="metric">
+                                    <div class="metric-value">100%</div>
+                                    <div class="metric-label">Automation</div>
+                                </div>
+                            </div>
+                            <div class="tags">
+                                <span class="tag">Make</span>
+                                <span class="tag">Mistral AI</span>
+                                <span class="tag">OpenRouter</span>
+                                <span class="tag">Perplexity</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Data Visualization Section -->
-    <section class="section">
-        <h2 class="section-title">Data Visualization</h2>
-        <div class="dataviz-grid" style="grid-template-columns: 1fr;">
-            <div class="tableau-card" style="padding: 24px;">
-                <h3 class="tableau-title">Bank Customer Attrition</h3>
-                <p class="tableau-subtitle" style="font-size: 18px; margin-bottom: 20px;">Predicting customer churn through advanced data visualization</p>
-                <div style="margin-bottom: 24px; overflow: visible;">
-                    <img src="images/Image Tableau.png" alt="Bank Customer Attrition Dashboard Preview" style="width: 100%; display: block;">
-                </div>
-                <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">This interactive dashboard transforms complex banking data into actionable insights, identifying key risk factors driving customer attrition. By analyzing demographic profiles, account behaviors, and engagement metrics, the dashboard enables precise customer segmentation and provides early warning indicators for at-risk accounts.</p>
-                    <div class="key-features" style="margin-top: 24px;">
-                        <h4>Key Insights:</h4>
-                        <ul>
-                            <li>Predictive analysis of customer attrition patterns</li>
-                            <li>Demographic and behavioral risk factor identification</li>
-                            <li>Interactive segmentation by customer value and risk level</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="tech-tags" style="margin: 24px 0;">
-                    <span class="tech-tag">Tableau</span>
-                    <span class="tech-tag">Data Analysis</span>
-                    <span class="tech-tag">Predictive Modeling</span>
-                    <span class="tech-tag">Customer Insights</span>
-                </div>
-                <a href="https://public.tableau.com/app/profile/sackdiphat.sounthala/viz/BankCustomerAttrition_17381608611290/BankCustomerAttrition" class="action-button" target="_blank">Explore Dashboard →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Coding Section -->
-    <section class="section coding-section">
-        <h2 class="section-title">Coding</h2>
-        
-        <!-- Binko -->
-        <div class="coding-grid">
-            <div class="image-slider" style="height: auto; padding-bottom: 75%;">
-                <img src="images/Binko_Project 1.jpg" alt="Binko Beta" class="slider-image active">
-                <img src="images/Binko_Project 2.jpg" alt="Binko Final" class="slider-image">
-                <div class="slider-controls">
-                    <div class="slider-dot active" data-slide="0"></div>
-                    <div class="slider-dot" data-slide="1"></div>
-                </div>
-            </div>
-            <div class="metrics-card">
-                <h3 class="tableau-title">Binko</h3>
-                <p class="tableau-subtitle" style="font-size: 18px; margin-bottom: 24px;">AI-powered waste detection through image generation</p>
-                <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">Binko is a company that automates waste detection and identification. This image generation project enables Binko's AI model to train on diverse waste examples, significantly improving its ability to accurately detect and classify different types of waste materials.</p>
-                    
-                    <p style="font-size: 17px; line-height: 1.7; margin-top: 16px;">The custom-built pipeline integrates <span class="highlight">Make</span> for seamless request handling, <span class="highlight">GPT-4o Mini</span> for intelligent prompt engineering, and <span class="highlight">Stable Diffusion 3.5</span> on Lightning AI for high-quality image generation—all orchestrated through Python automation.</p>
-                </div>
-                <div class="metrics-grid" style="margin: 24px 0;">
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">93%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Cost Reduction</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">180</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Images/hour</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">8.5/10</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Realism Score</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">$0.00075</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Cost per Image</div>
-                    </div>
-                </div>
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Lightning AI</span>
-                    <span class="tech-tag">Stable Diffusion</span>
-                    <span class="tech-tag">Make</span>
-                    <span class="tech-tag">GPT-4o Mini</span>
-                    <span class="tech-tag">Claude AI</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- AI Automation Section -->
-    <section class="section">
-        <h2 class="section-title">AI Automation</h2>
-        <div class="automation-grid" style="grid-template-columns: 1fr;">
-            <div class="automation-card">
-                <div style="display: flex; align-items: center; margin-bottom: 24px;">
-                    <img src="images/Malt Make Mistral Logo.png" alt="MALT MAKE MISTRAL Logo" style="height: 80px; margin-right: 24px; border-radius: 8px;">
-                    <div>
-                        <h3 class="tableau-title" style="margin-bottom: 8px;">MALT MAKE MISTRAL</h3>
-                        <p class="tableau-subtitle" style="font-size: 18px; margin: 0;">Intelligent B2B prospecting through AI automation</p>
-                    </div>
-                </div>
-                
-                <div class="project-details">
-                    <p style="font-size: 17px; line-height: 1.7;">As the Technical Lead for this project, I developed an innovative system that revolutionizes B2B prospecting for the MALT platform by applying advanced AI techniques to identify, score, and engage high-potential leads. Under my direction, the project introduced a sophisticated multi-channel outreach strategy powered by intelligent algorithms that transformed their acquisition workflow.</p>
-                    
-                    <p style="font-size: 17px; line-height: 1.7; margin-top: 16px;">My technical architecture leverages <span class="highlight">Mistral AI</span> for precise prospect analysis, implements <span class="highlight">AI-driven segmentation</span> for personalized engagement, and creates an omnichannel workflow with real-time performance monitoring through Slack integration—delivering measurable improvements to lead generation and conversion rates.</p>
-                    
-                    <div class="key-metrics" style="margin-top: 24px;">
-                        <h4>Key Performance Highlights:</h4>
-                        <ul>
-                            <li>Industry-leading 80% WhatsApp open rate (vs 60% for email)</li>
-                            <li>Real-time LinkedIn profile analysis for accurate targeting</li>
-                            <li>AI-powered intelligent follow-up system with personalized messaging</li>
-                            <li>Omnichannel engagement across messaging, email and social platforms</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <img src="images/Make Workflow.png" alt="MALT Workflow" class="workflow-image" style="max-height: none; margin: 30px 0;">
-                
-                <div class="metrics-grid" style="margin-top: 24px;">
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">80%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">WhatsApp Open Rate</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">+40%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Lead Conversion</div>
-                    </div>
-                    <div class="metric-item">
-                        <div class="metric-value" style="font-size: clamp(16px, 2.5vw, 24px);">100%</div>
-                        <div class="metric-label" style="font-size: clamp(10px, 1.5vw, 14px);">Automation</div>
-                    </div>
-                </div>
-                
-                <div class="tech-tags" style="margin-top: 24px;">
-                    <span class="tech-tag">Make</span>
-                    <span class="tech-tag">Mistral AI</span>
-                    <span class="tech-tag">OpenRouter</span>
-                    <span class="tech-tag">Perplexity</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>Sackdiphat SOUNTHALA - Data Analyst & AI Enthusiast</p>
-    </footer>
-
     <script>
-        // Image slider functionality
-        function initSliders() {
-            document.querySelectorAll('.slider-controls').forEach(controls => {
-                const slider = controls.parentElement;
-                const images = slider.querySelectorAll('.slider-image');
-                const dots = controls.querySelectorAll('.slider-dot');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Slider functionality
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            
+            if (slides.length > 0 && dots.length > 0) {
                 let currentSlide = 0;
-
-                function showSlide(index) {
-                    images.forEach(img => img.classList.remove('active'));
-                    dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Function to change slide
+                function changeSlide(index) {
+                    // Hide all slides
+                    slides.forEach(slide => {
+                        slide.classList.remove('active');
+                    });
                     
-                    images[index].classList.add('active');
+                    // Deactivate all dots
+                    dots.forEach(dot => {
+                        dot.classList.remove('active');
+                    });
+                    
+                    // Show current slide and activate dot
+                    slides[index].classList.add('active');
                     dots[index].classList.add('active');
+                    
                     currentSlide = index;
                 }
-
-                dots.forEach(dot => {
+                
+                // Set up dot click handlers
+                dots.forEach((dot, index) => {
                     dot.addEventListener('click', () => {
-                        const index = parseInt(dot.dataset.slide);
-                        showSlide(index);
+                        changeSlide(index);
                     });
                 });
-
-                // Auto-slide every 5 seconds
-                let slideInterval = setInterval(() => {
-                    currentSlide = (currentSlide + 1) % images.length;
-                    showSlide(currentSlide);
-                }, 5000);
-
-                // Pause on hover
-                slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
-                slider.addEventListener('mouseleave', () => {
-                    slideInterval = setInterval(() => {
-                        currentSlide = (currentSlide + 1) % images.length;
-                        showSlide(currentSlide);
-                    }, 5000);
+                
+                // Auto-advance slides
+                setInterval(() => {
+                    let nextSlide = (currentSlide + 1) % slides.length;
+                    changeSlide(nextSlide);
+                }, 4000);
+            }
+            
+            // Fullscreen image functionality
+            const modal = document.querySelector('.fullscreen-modal');
+            const modalImg = document.querySelector('.fullscreen-image');
+            const closeBtn = document.querySelector('.close-modal');
+            const fullscreenBtns = document.querySelectorAll('.fullscreen-button');
+            const projectImages = document.querySelectorAll('.project-image');
+            
+            // Setup fullscreen buttons
+            fullscreenBtns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const container = this.closest('.image-container');
+                    let imgSrc;
+                    
+                    // Check if it's a slider or regular image
+                    if (container.querySelector('.slider')) {
+                        imgSrc = container.querySelector('.slide.active').src;
+                    } else {
+                        imgSrc = container.querySelector('.project-image').src;
+                    }
+                    
+                    modalImg.src = imgSrc;
+                    modal.style.display = 'flex';
                 });
             });
-        }
-
-        document.addEventListener('DOMContentLoaded', initSliders);
+            
+            // Make images clickable to view fullscreen
+            projectImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    // Don't open fullscreen if inside a slider (let the slider handle the click)
+                    if (this.classList.contains('slide') && !this.classList.contains('active')) {
+                        return;
+                    }
+                    
+                    modalImg.src = this.src;
+                    modal.style.display = 'flex';
+                });
+            });
+            
+            // Close modal
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Mobile specific handling
+            if (window.innerWidth <= 768) {
+                // Create buttons to view descriptions on mobile
+                const imageContainers = document.querySelectorAll('.image-container');
+                
+                imageContainers.forEach(container => {
+                    const overlay = container.querySelector('.overlay');
+                    
+                    if (overlay) {
+                        // Create mobile overlay element
+                        const mobileOverlay = document.createElement('div');
+                        mobileOverlay.className = 'mobile-overlay';
+                        mobileOverlay.innerHTML = overlay.innerHTML;
+                        container.parentNode.insertBefore(mobileOverlay, container.nextSibling);
+                        
+                        // Create toggle button
+                        const toggleButton = document.createElement('button');
+                        toggleButton.className = 'mobile-overlay-button';
+                        toggleButton.textContent = 'View Description';
+                        container.appendChild(toggleButton);
+                        
+                        // Set up toggle functionality
+                        toggleButton.addEventListener('click', () => {
+                            if (mobileOverlay.classList.contains('active')) {
+                                mobileOverlay.classList.remove('active');
+                                toggleButton.textContent = 'View Description';
+                            } else {
+                                mobileOverlay.classList.add('active');
+                                toggleButton.textContent = 'Hide Description';
+                            }
+                        });
+                    }
+                });
+            }
+        });
     </script>
 </body>
 </html>
