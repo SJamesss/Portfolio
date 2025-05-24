@@ -1,68 +1,126 @@
-# Sackdiphat SOUNTHALA
+# Hi there, I'm Sackdiphat SOUNTHALA 👋
 
-## About Me
+<div align="center">
+  <img src="https://sjamesss.github.io/Portfolio/assets/profile-image.jpg" alt="Sackdiphat SOUNTHALA" width="200" style="border-radius: 50%"/>
+</div>
 
-Data Analyst & AI Enthusiast with a passion for leveraging data and artificial intelligence to drive business value. My expertise spans across:
+## 🎯 Data Analyst & AI Specialist
 
-- **Data Analysis & Visualization**: Creating insightful dashboards and reports using Tableau
-- **AI Development**: Building and deploying AI solutions for business automation
-- **Process Automation**: Streamlining workflows and optimizing business processes
+> Transforming complex data into actionable business insights through innovative data engineering systems and machine learning solutions.
 
-## Featured Projects
+Currently working as **Data Analyst** at **Carrefour** while pursuing my **MSc in Data & AI for Business** at Eugenia School, Paris.
 
-### AI Development
+---
 
-1. **FinanceGPT** - AI Banking Assistant
-   - Built with Claude AI and OCR technology
-   - Natural language processing for financial document analysis
-   - Real-time response generation for banking queries
+## 🚀 What I Do
 
-2. **Binko** - AI Image Generation System
-   - Developed using Make.com, GPT-4 Mini, and Stable Diffusion 3.5
-   - Automated product image generation for e-commerce
-   - Deployed on Lightning AI platform
+- **Data Engineering**: Implementing local data engineering systems for multi-source data consolidation
+- **Machine Learning**: Developing ML algorithms for product similarity analysis and predictive analytics
+- **Business Intelligence**: Creating dynamic dashboards and KPI tracking systems
+- **Anomaly Detection**: Building Python interfaces for automated data quality monitoring
+- **Process Optimization**: Automating business processes and improving operational efficiency
 
-### AI Automation
+---
 
-1. **MALT** - B2B Prospecting Automation
-   - Automated lead generation and outreach
-   - Integration with Make.com and Mistral AI
-   - 80% engagement rate via WhatsApp
-   - Streamlined B2B prospecting workflow
+## 💼 Professional Experience
 
-2. **Go Fusion** - SEO Content Automation
-   - Automated blog post generation with Claude AI
-   - Integration with DataforSEO and Semrush
-   - Eco-friendly approach: 4.32g CO2 per blog post
-   - Optimized content creation pipeline
+### 🏢 **Carrefour** - Data Analyst (Jan 2024 - Present)
+- Developed data engineering systems for multi-source data consolidation
+- Created PowerBI/Tableau dashboards for pricing and negotiation tracking
+- Built ML algorithms for product similarity analysis
+- Automated purchase price analysis and gain calculations with Python
 
-### Data Visualization
+### 🏪 **Tang Frères** - Business Analyst Assistant (Jun - Sep 2023)
+- Managed purchase orders from 5 suppliers ($8K - $80K per order)
+- Optimized data processing workflows using VBA
+- Created operational KPI tracking reports
+- Coordinated cross-departmental data projects
 
-1. **Bank Customer Attrition Dashboard**
-   - Interactive analysis of customer churn patterns
-   - Risk factor identification and visualization
-   - Built with Tableau Public
+---
 
-2. **Superstore Analytics Dashboard**
-   - Comprehensive business intelligence dashboard
-   - Key performance metrics and trends
-   - Built with Tableau Public
+## 🛠️ Tech Stack
 
-3. **E-commerce Sales Dashboard**
-   - Sales performance tracking and analysis
-   - Revenue insights and trend visualization
-   - Built with Tableau Public
+**Languages & Databases:**
+![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=Python&logoColor=white)
+![SQL](https://img.shields.io/badge/-SQL-4479A1?style=flat-square&logo=MySQL&logoColor=white)
+![VBA](https://img.shields.io/badge/-VBA-217346?style=flat-square&logo=Microsoft-Excel&logoColor=white)
 
-## Contact
+**Data & Analytics:**
+![Tableau](https://img.shields.io/badge/-Tableau-E97627?style=flat-square&logo=Tableau&logoColor=white)
+![Power BI](https://img.shields.io/badge/-Power%20BI-F2C811?style=flat-square&logo=Power-BI&logoColor=black)
+![BigQuery](https://img.shields.io/badge/-BigQuery-4285F4?style=flat-square&logo=Google-Cloud&logoColor=white)
+![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat-square&logo=Pandas&logoColor=white)
 
-- Email: sackdiphat@gmail.com
-- LinkedIn: [Sackdiphat SOUNTHALA](https://linkedin.com/in/sackdiphat-sounthala-45a871223)
-- GitHub: [SJamesss](https://github.com/SJamesss)
+**Tools & Platforms:**
+![Git](https://img.shields.io/badge/-Git-F05032?style=flat-square&logo=Git&logoColor=white)
+![GitHub](https://img.shields.io/badge/-GitHub-181717?style=flat-square&logo=GitHub&logoColor=white)
+![Excel](https://img.shields.io/badge/-Excel-217346?style=flat-square&logo=Microsoft-Excel&logoColor=white)
 
-## Website
+---
 
-This portfolio website showcases my professional work through a clean, minimalist design that emphasizes content clarity and user experience. Visit [here](https://sjamesss.github.io/Portfolio/) to explore my projects.
+## 📊 Featured Projects
 
-## License
+### 🤖 **AI-Powered B2B Prospecting System**
+An innovative system that leverages AI to identify, score, and engage high-potential leads through multiple channels.
 
- 2025 Sackdiphat SOUNTHALA - All rights reserved
+### 📈 **Retail Optimization Dashboard**
+Tableau dashboard for stock optimization and store KPIs monitoring with real-time commercial sales interface.
+
+### 🏦 **Banking Customer Churn Prediction**
+Predictive analytics model for customer attrition analysis in the banking sector.
+
+### 💬 **Banking Statement Analysis Chatbot**
+Python-based chatbot for automated bank statement analysis and insights generation.
+
+### ⚡ **Energy Consumption Forecasting**
+Machine learning model for predicting energy consumption patterns.
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=SJamesss&show_icons=true&theme=radical&count_private=true" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SJamesss&layout=compact&theme=radical" alt="Top Languages" />
+</div>
+
+---
+
+## 🎓 Education
+
+**MSc Data & AI for Business** | Eugenia School, Paris (2023-2025)  
+*Specialization: Data Visualization, Analytics, Strategy, Finance & Marketing*
+
+**Bachelor's in MIASHS** | Université Caen Normandie (2020-2023)  
+*Mathematics, Computer Science & Human Sciences*
+
+---
+
+## 🌐 Connect With Me
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=LinkedIn&logoColor=white)](https://www.linkedin.com/in/sackdiphat-sounthala-45a871223)
+[![Portfolio](https://img.shields.io/badge/-Portfolio-FF6B6B?style=flat-square&logo=Google-Chrome&logoColor=white)](https://sjamesss.github.io/Portfolio/)
+[![Tableau Public](https://img.shields.io/badge/-Tableau%20Public-E97627?style=flat-square&logo=Tableau&logoColor=white)](https://public.tableau.com/app/profile/sackdiphat.sounthala/vizzes)
+[![Email](https://img.shields.io/badge/-Email-D14836?style=flat-square&logo=Gmail&logoColor=white)](mailto:sackdiphat@gmail.com)
+
+---
+
+## 🌍 Languages
+
+**French** - Bilingual | **English** - Advanced | **Laotian** - Native | **Thai** - Native
+
+---
+
+## 🎯 Currently
+
+- 🔭 Working on innovative data engineering solutions at Carrefour
+- 🌱 Advancing my skills in AI and machine learning applications
+- 👯 Open to collaborating on data science and analytics projects
+- 💬 Ask me about data analysis, business intelligence, or anything tech!
+- ⚡ Fun fact: I enjoy sports (weightlifting, badminton) and art & drawing
+
+---
+
+<div align="center">
+  <i>💡 "Turning data into insights, insights into action"</i>
+</div>
