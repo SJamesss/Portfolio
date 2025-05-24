@@ -6,7 +6,7 @@
 
 ## 🎯 Data Analyst & AI Specialist
 
-> Implementing data engineering systems and ML solutions. Skilled in Python, SQL, PowerBI and Tableau with expertise in transforming complex data into actionable business insights.
+> Implementing data engineering systems and ML solutions. Skilled in **Python, SQL, PowerBI** and **Tableau** with expertise in transforming complex data into actionable business insights.
 
 Currently working as **Data Analyst** at **Carrefour**.
 
@@ -31,7 +31,7 @@ Currently working as **Data Analyst** at **Carrefour**.
 - Automated purchase price analysis and gain calculations with Python
 
 ### 🏪 **Tang Frères** - Business Analyst Assistant (Jun - Sep 2023)
-- Managed purchase orders from 5 suppliers ($8K - $80K per order)
+- Managed purchase orders from 5 suppliers
 - Optimized data processing workflows using VBA
 - Created operational KPI tracking reports
 - Coordinated cross-departmental data projects
