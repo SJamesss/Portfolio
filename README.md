@@ -1,14 +1,14 @@
 # Hi there, I'm Sackdiphat SOUNTHALA 👋
 
 <div align="center">
-  <img src="https://sjamesss.github.io/Portfolio/assets/profile-image.jpg" alt="Sackdiphat SOUNTHALA" width="200" style="border-radius: 50%"/>
+  <img src="images/Profile Picture.png" alt="Sackdiphat SOUNTHALA" width="200" style="border-radius: 50%"/>
 </div>
 
 ## 🎯 Data Analyst & AI Specialist
 
 > Transforming complex data into actionable business insights through innovative data engineering systems and machine learning solutions.
 
-Currently working as **Data Analyst** at **Carrefour** while pursuing my **MSc in Data & AI for Business** at Eugenia School, Paris.
+Currently working as **Data Analyst** at **Carrefour**.
 
 ---
 
