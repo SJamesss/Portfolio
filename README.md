@@ -6,7 +6,7 @@
 
 ## 🎯 Data Analyst & AI Specialist
 
-> Transforming complex data into actionable business insights through innovative data engineering systems and machine learning solutions.
+> Implementing data engineering systems and ML solutions. Skilled in Python, SQL, PowerBI and Tableau with expertise in transforming complex data into actionable business insights.
 
 Currently working as **Data Analyst** at **Carrefour**.
 
